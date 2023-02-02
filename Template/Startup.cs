@@ -33,14 +33,23 @@ namespace Template
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContext<MySQLContext>(options =>
-                options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version(8, 0, 22))
-                , builder =>
-                {
-                    builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
-                }
-                )
-            );
+
+        
+            //***Tutorial
+            services.AddDbContext<SQLServerContext>
+                (opt => opt.UseSqlServer(Configuration.GetConnectionString("PMD_PROD")).EnableSensitiveDataLogging());
+
+             
+
+
+            //services.AddDbContext<SQLServerContext>(options =>
+            //    options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version(8, 0, 22))
+            //    , builder =>
+            //    {
+            //        builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
+            //    }
+            //    )
+            //);
 
             services.AddCors(options =>
             {

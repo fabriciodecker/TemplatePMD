@@ -5,8 +5,9 @@ import { AlertService } from "./alert.service";
 export class ErrorService {
 
   constructor(private alertService: AlertService) { }
-
+  
   validateError(error) {
+    
     switch (error.status) {
       case 400: {
         if (error.error.errors) {

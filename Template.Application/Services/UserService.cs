@@ -58,10 +58,10 @@ namespace Template.Application.Services
         {
             User _user = repository.GetByEmailAndPassword(user.Email, UtilsService.EncryptPassword(user.Password));
             if (_user == null)
-                throw new ApiException("Email/Password not found", HttpStatusCode.NotFound);
+                throw new ApiException("Email/Password not found", HttpStatusCode.BadRequest);
 
             if (!_user.IsAuthorised)
-                throw new ApiException("Your account is not activate yet.", HttpStatusCode.NotFound);
+                throw new ApiException("Your account is not activate yet.", HttpStatusCode.BadRequest);
 
             string token = tokenService.GenerateToken(mapper.Map<ContextUserViewModel>(_user));
 
