@@ -70,7 +70,7 @@ namespace Template.CrossCutting.Notification.Services
 
 				client.Send(mailMessage);
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 
 			}
@@ -92,7 +92,7 @@ namespace Template.CrossCutting.Notification.Services
 
 				await client.SendAsync(mailMessage);
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 
 			}

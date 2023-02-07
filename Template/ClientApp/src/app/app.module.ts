@@ -21,6 +21,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { UsersComponent } from './users/users.component';
 import { AccountComponent } from './account/account.component';
+import { PidlineComponent } from './pidline/pidline.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AccountComponent } from './account/account.component';
     LoginComponent,
     DashboardComponent,
     UsersComponent,
-    AccountComponent
+    AccountComponent,
+    PidlineComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

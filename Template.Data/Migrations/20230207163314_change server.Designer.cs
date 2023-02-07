@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Template.Data.Context;
 
 namespace Template.Data.Migrations
 {
     [DbContext(typeof(SQLServerContext))]
-    partial class SQLServerContextModelSnapshot : ModelSnapshot
+    [Migration("20230207163314_change server")]
+    partial class changeserver
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -253,7 +255,7 @@ namespace Template.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 2, 7, 13, 40, 52, 172, DateTimeKind.Local).AddTicks(8203),
+                            CreatedDate = new DateTime(2023, 2, 7, 13, 33, 13, 394, DateTimeKind.Local).AddTicks(1687),
                             CreatedUser = 1,
                             Email = "admin@template.com",
                             IsActive = true,
@@ -266,7 +268,7 @@ namespace Template.Data.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 2, 7, 13, 40, 52, 173, DateTimeKind.Local).AddTicks(8248),
+                            CreatedDate = new DateTime(2023, 2, 7, 13, 33, 13, 395, DateTimeKind.Local).AddTicks(2562),
                             CreatedUser = 1,
                             Email = "user@template.com",
                             IsActive = true,
